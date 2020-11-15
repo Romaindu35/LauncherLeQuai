@@ -5,8 +5,7 @@ import fr.flowarg.flowlogger.Logger;
 import fr.flowarg.flowupdater.FlowUpdater;
 import fr.flowarg.flowupdater.download.IProgressCallback;
 import fr.flowarg.flowupdater.download.Step;
-import fr.flowarg.flowupdater.download.json.CurseModInfos;
-import fr.flowarg.flowupdater.download.json.Mod;
+import fr.flowarg.flowupdater.download.json.OptifineInfo;
 import fr.flowarg.flowupdater.utils.ModFileDeleter;
 import fr.flowarg.flowupdater.utils.UpdaterOptions;
 import fr.flowarg.flowupdater.versions.*;
@@ -22,8 +21,6 @@ import fr.theshark34.openlauncherlib.minecraft.MinecraftLauncher;
 import javafx.application.Platform;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 
 public class LaunchMinecraft {
 
@@ -31,7 +28,7 @@ public class LaunchMinecraft {
 
     public synchronized static void updateForge(File dir) throws Exception {
         final VanillaVersion version =
-                new VanillaVersion.VanillaVersionBuilder().withVersionType(VersionType.FORGE).withName("1.16.3").build();
+                new VanillaVersion.VanillaVersionBuilder().withVersionType(VersionType.FORGE).withName("1.16.4").build();
         final UpdaterOptions options = new UpdaterOptions.UpdaterOptionsBuilder()
                 .withSilentRead(true)
                 .withReExtractNatives(false)
@@ -39,12 +36,12 @@ public class LaunchMinecraft {
                 .build();
         final ILogger logger = new Logger("LeQuai", new File(dir, "launcher.log"));
         AbstractForgeVersion forgeVersion = new ForgeVersionBuilder(ForgeVersionBuilder.ForgeVersionType.NEW)
-                .withForgeVersion("1.16.3-34.1.0")
+                .withForgeVersion("1.16.4-35.0.17")
                 .withVanillaVersion(version)
                 .withLogger(logger)
                 .withProgressCallback(callback)
                 .withFileDeleter(new ModFileDeleter(true))
-                .withOptifine("1.16.3_HD_U_G3")
+                .withOptifine(new OptifineInfo("1.16.4_HD_U_G5", false))
                 .withNoGui(true)
                 .build();
 
@@ -57,7 +54,7 @@ public class LaunchMinecraft {
                 .withForgeVersion(forgeVersion)
                 .build();
 
-        updater.update(dir, false);
+        updater.update(dir);
     }
 
     public synchronized static void LaunchMinecraft(GameInfos infos, AuthInfos authInfos) throws LaunchException {

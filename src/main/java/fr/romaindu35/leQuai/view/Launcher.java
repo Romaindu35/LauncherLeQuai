@@ -34,7 +34,7 @@ public class Launcher {
     private String labelText;
 
     public static GameInfos infos = new GameInfos("leQuai", new GameVersion("1.16.3", GameType.V1_13_HIGER_FORGE.setNewForgeVersionDiscriminator(
-            new NewForgeVersionDiscriminator("34.1.0", "1.16.3", "net.minecraftforge", "20200911.084530"))),
+            new NewForgeVersionDiscriminator("35.0.17", "1.16.4", "net.minecraftforge", "20201102.104115"))),
             new GameTweak[] {});
 
     public void inconified() {

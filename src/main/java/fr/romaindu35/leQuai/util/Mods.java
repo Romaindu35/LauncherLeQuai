@@ -1,6 +1,6 @@
 package fr.romaindu35.leQuai.util;
 
-import fr.flowarg.flowupdater.download.json.CurseModInfos;
+import fr.flowarg.flowupdater.download.json.CurseFileInfos;
 import fr.flowarg.flowupdater.download.json.Mod;
 
 import java.io.File;
@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Mods {
 
-    public static List<CurseModInfos> curseModInfosList = new ArrayList<>();
+    public static List<CurseFileInfos> curseModInfosList = new ArrayList<>();
     public static List<Mod> modList = new ArrayList<>();
 
     public static void generateMod() {
@@ -23,10 +23,10 @@ public class Mods {
     }
 
     public static void addCurseMod(int projectID, int fileID, String modName) {
-        curseModInfosList.add(new CurseModInfos(projectID, fileID));
+        curseModInfosList.add(new CurseFileInfos(projectID, fileID));
     }
 
-    public static List<CurseModInfos> getCurseModInfosList() {
+    public static List<CurseFileInfos> getCurseModInfosList() {
         generateMod();
         return curseModInfosList;
     }
