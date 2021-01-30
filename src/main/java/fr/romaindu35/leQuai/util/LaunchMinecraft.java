@@ -36,7 +36,7 @@ public class LaunchMinecraft {
                 .build();
         final ILogger logger = new Logger("LeQuai", new File(dir, "launcher.log"));
         AbstractForgeVersion forgeVersion = new ForgeVersionBuilder(ForgeVersionBuilder.ForgeVersionType.NEW)
-                .withForgeVersion("1.16.4-35.0.17")
+                .withForgeVersion("1.16.4-35.1.4")
                 .withVanillaVersion(version)
                 .withLogger(logger)
                 .withProgressCallback(callback)

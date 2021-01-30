@@ -33,8 +33,8 @@ public class Launcher {
     private double valueDownloadDouble;
     private String labelText;
 
-    public static GameInfos infos = new GameInfos("leQuai", new GameVersion("1.16.3", GameType.V1_13_HIGER_FORGE.setNewForgeVersionDiscriminator(
-            new NewForgeVersionDiscriminator("35.0.17", "1.16.4", "net.minecraftforge", "20201102.104115"))),
+    public static GameInfos infos = new GameInfos("leQuai", new GameVersion("1.16.4", GameType.V1_13_HIGER_FORGE.setNewForgeVersionDiscriminator(
+            new NewForgeVersionDiscriminator("35.1.4", "1.16.4", "net.minecraftforge", "20201102.104115"))),
             new GameTweak[] {});
 
     public void inconified() {
@@ -53,7 +53,8 @@ public class Launcher {
             error("Erreur", "Votre pseudo doit contenir plus de 3 caractère");
             return;
         }
-        System.out.println("ok");
+        //System.out.println("ok")
+        pseudo.setEditable(false);
         update(pseudo.getText());
     }
 
